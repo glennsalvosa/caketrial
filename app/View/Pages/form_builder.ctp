@@ -390,6 +390,13 @@
 					var setting_content_modification = $('#inputOptionsRegular_'+generated_id).html().replace(/toReplace/g, generated_id);
 					$('#inputOptionsRegular_'+generated_id).html(setting_content_modification);
 					
+					var noStringExistence = draggable_content.search("no-string");
+					if(noStringExistence) {
+						$('#inputOptionsRegular_'+generated_id).children('.droppedElementSettingBody').children('.no-setting').each( function () {
+							$(this).remove();
+						});
+					}
+					
 				/* ---------------------------------------- GENERATION OF CONTENT INSIDE THE DROPPABLE AREA ------------------------------------- */
 				
 				
